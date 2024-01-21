@@ -4,7 +4,8 @@
   "description": "Demo Refactoring in TypeScript",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
