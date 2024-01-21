@@ -26,10 +26,16 @@ npm run test
 - The fare calculation and minimum fare rules should be applied individually to each ride in the list.
 ### 4: Invoice Details Printing:
 - The system should generate a detailed invoice that includes:
-
-	The total number of rides.
-	The overall fare for all rides.
-	The average fare per ride.
+  
+```
+Invoice:
+	Ride Fare: ฿35.00 for Distance: 3.5 km, Waiting Time: 10 minutes
+	Ride Fare: ฿35.00 for Distance: 2 km, Waiting Time: 5 minutes
+	Ride Fare: ฿35.00 for Distance: 4 km, Waiting Time: 8 minutes
+Total Number of Rides: 3
+Total Fare: ฿105.00
+Average Fare Per Ride: ฿35.00
+```
 
 ## ความต้องการของระบบคิดค่าโดยสารรถตุ๊กตุ๊ก
 
@@ -44,8 +50,12 @@ npm run test
 - ระบบจะต้องคำนวณค่าโดยสารและใช้กฎขั้นต่ำแยกตามการเดินทางแต่ละรอบ
 ### 4: การพิมพ์รายละเอียดใบแจ้งหนี้:
 - ระบบจะต้องสร้างใบแจ้งหนี้ที่มีรายละเอียดอย่างละเอียด ซึ่งรวมถึง:
-
-	จำนวนการเดินทางทั้งหมด
-	ค่าโดยสารทั้งหมด
-	ค่าโดยสารเฉลี่ยต่อการเดินทาง
-
+```
+Invoice:
+	Ride Fare: ฿35.00 for Distance: 3.5 km, Waiting Time: 10 minutes
+	Ride Fare: ฿35.00 for Distance: 2 km, Waiting Time: 5 minutes
+	Ride Fare: ฿35.00 for Distance: 4 km, Waiting Time: 8 minutes
+Total Number of Rides: 3
+Total Fare: ฿105.00
+Average Fare Per Ride: ฿35.00
+```
