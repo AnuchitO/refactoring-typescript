@@ -3,11 +3,12 @@ type Ride = {
   waitingTime: number
 }
 
-function generateInvoice(rides: Ride[]): void {
+function generateInvoice(rides: Ride[]): string {
   let totalFare = 0,
     totalRides = 0,
     totalWaitingTime = 0
-  console.log('Invoice:')
+  let result = ''
+  result += 'Invoice:' + '\n'
   for (const ride of rides) {
     const roundedDistance = Math.ceil(ride.distance * 2) / 2
     const roundedWaitingTime = Math.ceil(ride.waitingTime)
@@ -19,18 +20,19 @@ function generateInvoice(rides: Ride[]): void {
     totalRides += 1
     totalWaitingTime += roundedWaitingTime
 
-    console.log(
+    result +=
       `	Ride Fare: ฿${minimumFare.toFixed(
         2
-      )} for Distance: ${roundedDistance} km, Waiting Time: ${roundedWaitingTime} minutes`
-    )
+      )} for Distance: ${roundedDistance} km, Waiting Time: ${roundedWaitingTime} minutes` +
+      '\n'
   }
 
   const averageFarePerRide = totalFare / totalRides
 
-  console.log('Total Number of Rides: ' + totalRides)
-  console.log('Total Fare: ฿' + totalFare.toFixed(2))
-  console.log('Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2))
+  result += 'Total Number of Rides: ' + totalRides + '\n'
+  result += 'Total Fare: ฿' + totalFare.toFixed(2) + '\n'
+  result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
+  return result
 }
 
 // Example usage
@@ -40,4 +42,5 @@ const rides: Ride[] = [
   {distance: 4, waitingTime: 8},
 ]
 
-generateInvoice(rides)
+const invoice = generateInvoice(rides)
+console.log(invoice)
