@@ -26,12 +26,12 @@ npm run test
 - The fare calculation and minimum fare rules should be applied individually to each ride in the list.
 ### 4: Invoice Details Printing:
 - The system should generate a detailed invoice that includes:
-  
+
 ```
 Invoice:
-	Ride Fare: ฿35.00 for Distance: 3.5 km, Waiting Time: 10 minutes
-	Ride Fare: ฿35.00 for Distance: 2 km, Waiting Time: 5 minutes
-	Ride Fare: ฿35.00 for Distance: 4 km, Waiting Time: 8 minutes
+	Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes
+	Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes
+	Ride Fare: ฿40.00 for Distance: 8.2 km, Waiting Time: 6 minutes
 Total Number of Rides: 3
 Total Fare: ฿105.00
 Average Fare Per Ride: ฿35.00
@@ -52,9 +52,9 @@ Average Fare Per Ride: ฿35.00
 - ระบบจะต้องสร้างใบแจ้งหนี้ที่มีรายละเอียดอย่างละเอียด ซึ่งรวมถึง:
 ```
 Invoice:
-	Ride Fare: ฿35.00 for Distance: 3.5 km, Waiting Time: 10 minutes
-	Ride Fare: ฿35.00 for Distance: 2 km, Waiting Time: 5 minutes
-	Ride Fare: ฿35.00 for Distance: 4 km, Waiting Time: 8 minutes
+	Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes
+	Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes
+	Ride Fare: ฿40.00 for Distance: 8.2 km, Waiting Time: 6 minutes
 Total Number of Rides: 3
 Total Fare: ฿105.00
 Average Fare Per Ride: ฿35.00
