@@ -33,7 +33,9 @@ function generateInvoice(rides: Ride[] = []): string {
       waitingTime: roundUpWaitingTime(ride.waitingTime),
     }
     details.push(info)
+  }
 
+  for (const info of details) {
     result +=
       `	Ride Fare: ฿${info.fare.toFixed(
         2
