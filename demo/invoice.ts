@@ -82,4 +82,13 @@ function generateInvoice(rides: Ride[] = []): string {
   return plainTextInvoice(details)
 }
 
-export {generateInvoice, Ride, htmlInvoice, Detail}
+const invoiceOf = (rides: Ride[], format: string = 'plain'): string => {
+  const details: Detail[] = fareOf(rides)
+  if (format === 'html') {
+    return htmlInvoice(details)
+  }
+
+  return plainTextInvoice(details)
+}
+
+export {generateInvoice, Ride, htmlInvoice, Detail, invoiceOf}

@@ -1,4 +1,4 @@
-import {Detail, generateInvoice, htmlInvoice, Ride} from './invoice'
+import {Detail, generateInvoice, htmlInvoice, invoiceOf, Ride} from './invoice'
 
 describe('Invoice', () => {
   it('should generate invoice for 1 ride', () => {
@@ -71,6 +71,38 @@ Average Fare Per Ride: ฿48.33
 <p>Total Number of Rides: 3</p>
 <p>Total Fare: ฿145.00</p>
 <p>Average Fare Per Ride: ฿48.33</p>
+`
+      expect(invoice).toEqual(want)
+    })
+  })
+
+  describe('invoiceOf', () => {
+    it('should generate invoice for 1 ride in plain text', () => {
+      const rides: Ride[] = [{distance: 15, waitingTime: 10}]
+
+      const invoice = invoiceOf(rides)
+
+      const want = `Invoice:
+	Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes
+Total Number of Rides: 1
+Total Fare: ฿70.00
+Average Fare Per Ride: ฿70.00
+`
+      expect(invoice).toEqual(want)
+    })
+
+    it('should generate invoice for 1 ride in html', () => {
+      const rides: Ride[] = [{distance: 15, waitingTime: 10}]
+
+      const invoice = invoiceOf(rides, 'html')
+
+      const want = `<h2>Invoice:</h2>
+<ul>
+	<li>Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes</li>
+</ul>
+<p>Total Number of Rides: 1</p>
+<p>Total Fare: ฿70.00</p>
+<p>Average Fare Per Ride: ฿70.00</p>
 `
       expect(invoice).toEqual(want)
     })
