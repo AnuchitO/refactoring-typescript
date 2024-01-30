@@ -23,8 +23,9 @@ function generateInvoice(rides: Ride[]): string {
     result +=
       `	Ride Fare: ฿${minimumFare.toFixed(
         2
-      )} for Distance: ${roundedDistance} km, Waiting Time: ${roundedWaitingTime} minutes` +
-      '\n'
+      )} for Distance: ${roundedDistance.toFixed(
+        1
+      )} km, Waiting Time: ${roundedWaitingTime} minutes` + '\n'
   }
 
   const averageFarePerRide = totalFare / totalRides
@@ -34,6 +35,8 @@ function generateInvoice(rides: Ride[]): string {
   result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
   return result
 }
+
+export {generateInvoice, Ride}
 
 // Example usage
 /*
