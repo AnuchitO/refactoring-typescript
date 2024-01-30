@@ -3,6 +3,10 @@ type Ride = {
   waitingTime: number
 }
 
+const roundUpDistance = (distance: number): number => {
+  return Math.ceil(distance * 2) / 2
+}
+
 function generateInvoice(rides: Ride[] = []): string {
   let totalFare = 0
   let result = ''
