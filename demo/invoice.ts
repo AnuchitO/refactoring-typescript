@@ -69,7 +69,7 @@ function generateInvoice(rides: Ride[] = []): string {
   result += 'Total Number of Rides: ' + rides.length + '\n'
   result += 'Total Fare: ฿' + totalFare.toFixed(2) + '\n'
   result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
-  return result
+  return plainTextInvoice(details, rides)
 }
 
 export {generateInvoice, Ride}
