@@ -3,7 +3,7 @@ type Ride = {
   waitingTime: number
 }
 
-function generateInvoice(rides: Ride[]): string {
+function generateInvoice(rides: Ride[] = []): string {
   let totalFare = 0
   let totalRides = rides.length
   let result = ''
