@@ -12,20 +12,17 @@ function generateInvoice(rides: Ride[] = []): string {
   let result = ''
   result += 'Invoice:' + '\n'
   for (const ride of rides) {
-    const roundedDistance = roundUpDistance(ride.distance)
     const roundedWaitingTime = Math.ceil(ride.waitingTime)
 
-    const fare = 4 * roundedDistance + roundedWaitingTime
+    const fare = 4 * roundUpDistance(ride.distance) + roundedWaitingTime
     const minimumFare = fare < 35 ? 35 : fare
 
     totalFare += minimumFare
 
     result +=
-      `	Ride Fare: ฿${minimumFare.toFixed(
-        2
-      )} for Distance: ${roundedDistance.toFixed(
-        1
-      )} km, Waiting Time: ${roundedWaitingTime} minutes` + '\n'
+      `	Ride Fare: ฿${minimumFare.toFixed(2)} for Distance: ${roundUpDistance(
+        ride.distance
+      ).toFixed(1)} km, Waiting Time: ${roundedWaitingTime} minutes` + '\n'
   }
 
   const averageFarePerRide = totalFare / rides.length
