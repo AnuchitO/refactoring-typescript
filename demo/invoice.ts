@@ -7,6 +7,10 @@ const roundUpDistance = (distance: number): number => {
   return Math.ceil(distance * 2) / 2
 }
 
+const roundUpWaitingTime = (waitingTime: number): number => {
+  return Math.ceil(waitingTime)
+}
+
 function generateInvoice(rides: Ride[] = []): string {
   let totalFare = 0
   let result = ''
