@@ -57,17 +57,7 @@ const fareOf = (rides: Ride[]): Detail[] => {
 }
 
 function generateInvoice(rides: Ride[] = []): string {
-  const details: Detail[] = rides.map((ride) => {
-    const distance = roundUpDistance(ride.distance)
-    const waitingTime = roundUpWaitingTime(ride.waitingTime)
-    const fare = 4 * distance + waitingTime
-
-    return {
-      fare: minimumFare(fare),
-      distance,
-      waitingTime,
-    }
-  })
+  const details: Detail[] = fareOf(rides)
 
   return plainTextInvoice(details)
 }
