@@ -19,19 +19,16 @@ function generateInvoice(rides: Ride[] = []): string {
   let result = ''
   result += 'Invoice:' + '\n'
 
-  const details = []
-
-  for (const ride of rides) {
+  const details = rides.map((ride) => {
     const fare =
       4 * roundUpDistance(ride.distance) + roundUpWaitingTime(ride.waitingTime)
 
-    const info = {
+    return {
       fare: minimumFare(fare),
       distance: roundUpDistance(ride.distance),
       waitingTime: roundUpWaitingTime(ride.waitingTime),
     }
-    details.push(info)
-  }
+  })
 
   for (const info of details) {
     result +=
