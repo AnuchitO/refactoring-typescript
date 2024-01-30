@@ -15,6 +15,28 @@ const minimumFare = (fare: number): number => {
   return fare < 35 ? 35 : fare
 }
 
+const plainTextInvoice = (details: any[], rides: Ride[] = []): string => {
+  // presentation logic
+  // extract to function plainTextInvoice
+  let result = ''
+  result += 'Invoice:' + '\n'
+  for (const info of details) {
+    result +=
+      `	Ride Fare: ฿${info.fare.toFixed(
+        2
+      )} for Distance: ${info.distance.toFixed(1)} km, Waiting Time: ${
+        info.waitingTime
+      } minutes` + '\n'
+  }
+  const totalFare = details.reduce((acc, cur) => acc + cur.fare, 0)
+  const averageFarePerRide = totalFare / rides.length
+
+  result += 'Total Number of Rides: ' + rides.length + '\n'
+  result += 'Total Fare: ฿' + totalFare.toFixed(2) + '\n'
+  result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
+  return result
+}
+
 function generateInvoice(rides: Ride[] = []): string {
   // business logic
   const details = rides.map((ride) => {
@@ -30,6 +52,7 @@ function generateInvoice(rides: Ride[] = []): string {
   })
 
   // presentation logic
+  // extract to function plainTextInvoice
   let result = ''
   result += 'Invoice:' + '\n'
   for (const info of details) {
