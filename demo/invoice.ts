@@ -5,7 +5,7 @@ type Ride = {
 
 function generateInvoice(rides: Ride[]): string {
   let totalFare = 0
-  let totalRides = 0
+  let totalRides = rides.length
   let result = ''
   result += 'Invoice:' + '\n'
   for (const ride of rides) {
@@ -16,7 +16,6 @@ function generateInvoice(rides: Ride[]): string {
     const minimumFare = fare < 35 ? 35 : fare
 
     totalFare += minimumFare
-    totalRides += 1
 
     result +=
       `	Ride Fare: ฿${minimumFare.toFixed(
