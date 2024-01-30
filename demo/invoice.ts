@@ -5,7 +5,6 @@ type Ride = {
 
 function generateInvoice(rides: Ride[] = []): string {
   let totalFare = 0
-  let totalRides = rides.length
   let result = ''
   result += 'Invoice:' + '\n'
   for (const ride of rides) {
@@ -25,9 +24,9 @@ function generateInvoice(rides: Ride[] = []): string {
       )} km, Waiting Time: ${roundedWaitingTime} minutes` + '\n'
   }
 
-  const averageFarePerRide = totalFare / totalRides
+  const averageFarePerRide = totalFare / rides.length
 
-  result += 'Total Number of Rides: ' + totalRides + '\n'
+  result += 'Total Number of Rides: ' + rides.length + '\n'
   result += 'Total Fare: ฿' + totalFare.toFixed(2) + '\n'
   result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
   return result
