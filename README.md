@@ -31,10 +31,10 @@ npm run test
 Invoice:
 	Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes
 	Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes
-	Ride Fare: ฿40.00 for Distance: 8.2 km, Waiting Time: 6 minutes
+	Ride Fare: ฿40.00 for Distance: 8.5 km, Waiting Time: 6 minutes
 Total Number of Rides: 3
-Total Fare: ฿105.00
-Average Fare Per Ride: ฿35.00
+Total Fare: ฿145.00
+Average Fare Per Ride: ฿48.33
 ```
 
 ### New feature: show invoice in HTML format
@@ -44,11 +44,11 @@ Average Fare Per Ride: ฿35.00
 <ul>
 	<li>Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes</li>
 	<li>Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes</li>
-	<li>Ride Fare: ฿40.00 for Distance: 8.2 km, Waiting Time: 6 minutes</li>
+	<li>Ride Fare: ฿40.00 for Distance: 8.5 km, Waiting Time: 6 minutes</li>
 </ul>
 <p>Total Number of Rides: 3</p>
-<p>Total Fare: ฿105.00</p>
-<p>Average Fare Per Ride: ฿35.00</p>
+<p>Total Fare: ฿145.00</p>
+<p>Average Fare Per Ride: ฿48.33</p>
 ```
 
 ## ความต้องการของระบบคิดค่าโดยสารรถตุ๊กตุ๊ก
@@ -68,10 +68,10 @@ Average Fare Per Ride: ฿35.00
 Invoice:
 	Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes
 	Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes
-	Ride Fare: ฿40.00 for Distance: 8.2 km, Waiting Time: 6 minutes
+	Ride Fare: ฿40.00 for Distance: 8.5 km, Waiting Time: 6 minutes
 Total Number of Rides: 3
-Total Fare: ฿105.00
-Average Fare Per Ride: ฿35.00
+Total Fare: ฿145.00
+Average Fare Per Ride: ฿48.33
 ```
 
 ### ความต้องการใหม่: แสดงใบแจ้งหนี้ในรูปแบบ HTML
@@ -81,9 +81,9 @@ Average Fare Per Ride: ฿35.00
 <ul>
 	<li>Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes</li>
 	<li>Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes</li>
-	<li>Ride Fare: ฿40.00 for Distance: 8.2 km, Waiting Time: 6 minutes</li>
+	<li>Ride Fare: ฿40.00 for Distance: 8.5 km, Waiting Time: 6 minutes</li>
 </ul>
 <p>Total Number of Rides: 3</p>
-<p>Total Fare: ฿105.00</p>
-<p>Average Fare Per Ride: ฿35.00</p>
+<p>Total Fare: ฿145.00</p>
+<p>Average Fare Per Ride: ฿48.33</p>
 ```
