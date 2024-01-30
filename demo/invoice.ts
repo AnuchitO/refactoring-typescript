@@ -20,13 +20,14 @@ function generateInvoice(rides: Ride[] = []): string {
   result += 'Invoice:' + '\n'
 
   const details = rides.map((ride) => {
-    const fare =
-      4 * roundUpDistance(ride.distance) + roundUpWaitingTime(ride.waitingTime)
+    const distance = roundUpDistance(ride.distance)
+    const waitingTime = roundUpWaitingTime(ride.waitingTime)
+    const fare = 4 * distance + waitingTime
 
     return {
       fare: minimumFare(fare),
-      distance: roundUpDistance(ride.distance),
-      waitingTime: roundUpWaitingTime(ride.waitingTime),
+      distance,
+      waitingTime,
     }
   })
 
