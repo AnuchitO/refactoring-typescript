@@ -42,6 +42,10 @@ const plainTextInvoice = (details: Detail[]): string => {
   return result
 }
 
+const htmlInvoice = (details: Detail[]): string => {
+  return ''
+}
+
 const fareOf = (rides: Ride[]): Detail[] => {
   return rides.map((ride) => {
     const distance = roundUpDistance(ride.distance)
@@ -62,4 +66,4 @@ function generateInvoice(rides: Ride[] = []): string {
   return plainTextInvoice(details)
 }
 
-export {generateInvoice, Ride}
+export {generateInvoice, Ride, htmlInvoice, Detail}
