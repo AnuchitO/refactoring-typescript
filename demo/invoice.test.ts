@@ -55,8 +55,11 @@ Average Fare Per Ride: ฿48.33
 
   describe('htmlInvoice', () => {
     it('should generate html invoice for 1 ride', () => {
-      const details: Detail[] = [{fare: 70, distance: 15, waitingTime: 10}]
-
+      const details: Detail[] = [
+        {fare: 70, distance: 15, waitingTime: 10},
+        {fare: 35, distance: 7, waitingTime: 5},
+        {fare: 40, distance: 8.5, waitingTime: 6},
+      ]
       const invoice = htmlInvoice(details)
 
       const want = `<h2>Invoice:</h2>

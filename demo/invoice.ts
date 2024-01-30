@@ -42,8 +42,36 @@ const plainTextInvoice = (details: Detail[]): string => {
   return result
 }
 
+/*
+<h2>Invoice:</h2>
+<ul>
+	<li>Ride Fare: ฿70.00 for Distance: 15.0 km, Waiting Time: 10 minutes</li>
+	<li>Ride Fare: ฿35.00 for Distance: 7.0 km, Waiting Time: 5 minutes</li>
+	<li>Ride Fare: ฿40.00 for Distance: 8.5 km, Waiting Time: 6 minutes</li>
+</ul>
+<p>Total Number of Rides: 3</p>
+<p>Total Fare: ฿145.00</p>
+<p>Average Fare Per Ride: ฿48.33</p>
+*/
 const htmlInvoice = (details: Detail[]): string => {
-  return ''
+  let result = '<h2>Invoice:</h2>\n<ul>\n'
+  details.forEach((info) => {
+    result += `	<li>Ride Fare: ฿${info.fare.toFixed(
+      2
+    )} for Distance: ${info.distance.toFixed(1)} km, Waiting Time: ${
+      info.waitingTime
+    } minutes</li>\n`
+  })
+  result += '</ul>\n'
+  const numberOfRides = details.length
+  const totalFare = details.reduce((acc, cur) => acc + cur.fare, 0)
+  const averageFarePerRide = totalFare / numberOfRides
+
+  result += '<p>Total Number of Rides: ' + numberOfRides + '</p>\n'
+  result += '<p>Total Fare: ฿' + totalFare.toFixed(2) + '</p>\n'
+  result +=
+    '<p>Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '</p>\n'
+  return result
 }
 
 const fareOf = (rides: Ride[]): Detail[] => {
