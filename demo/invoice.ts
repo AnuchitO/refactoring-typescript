@@ -11,7 +11,7 @@ const roundUpWaitingTime = (waitingTime: number): number => {
   return Math.ceil(waitingTime)
 }
 
-const _minimumFare = (fare: number): number => {
+const minimumFare = (fare: number): number => {
   return fare < 35 ? 35 : fare
 }
 
@@ -22,10 +22,10 @@ function generateInvoice(rides: Ride[] = []): string {
   for (const ride of rides) {
     const fare =
       4 * roundUpDistance(ride.distance) + roundUpWaitingTime(ride.waitingTime)
-    totalFare += _minimumFare(fare)
+    totalFare += minimumFare(fare)
 
     result +=
-      `	Ride Fare: ฿${_minimumFare(fare).toFixed(
+      `	Ride Fare: ฿${minimumFare(fare).toFixed(
         2
       )} for Distance: ${roundUpDistance(ride.distance).toFixed(
         1
