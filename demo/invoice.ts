@@ -16,7 +16,7 @@ function generateInvoice(rides: Ride[] = []): string {
   let result = ''
   result += 'Invoice:' + '\n'
   for (const ride of rides) {
-    const roundedWaitingTime = Math.ceil(ride.waitingTime)
+    const roundedWaitingTime = roundUpWaitingTime(ride.waitingTime)
 
     const fare = 4 * roundUpDistance(ride.distance) + roundedWaitingTime
     const minimumFare = fare < 35 ? 35 : fare
