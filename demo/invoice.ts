@@ -56,11 +56,10 @@ const plainTextInvoice = (details: Detail[]): string => {
 const htmlInvoice = (details: Detail[]): string => {
   let result = '<h2>Invoice:</h2>\n<ul>\n'
   details.forEach((info) => {
-    result += `	<li>Ride Fare: ฿${info.fare.toFixed(
-      2
-    )} for Distance: ${info.distance.toFixed(1)} km, Waiting Time: ${
-      info.waitingTime
-    } minutes</li>\n`
+    const fare = info.fare.toFixed(2)
+    const dist = info.distance.toFixed(1)
+    const wait = info.waitingTime
+    result += `	<li>Ride Fare: ฿${fare} for Distance: ${dist} km, Waiting Time: ${wait} minutes</li>\n`
   })
   result += '</ul>\n'
   const numberOfRides = details.length
