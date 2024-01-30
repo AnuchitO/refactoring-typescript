@@ -24,6 +24,12 @@ function generateInvoice(rides: Ride[] = []): string {
       4 * roundUpDistance(ride.distance) + roundUpWaitingTime(ride.waitingTime)
     totalFare += minimumFare(fare)
 
+    const info = {
+      fare: minimumFare(fare),
+      distance: roundUpDistance(ride.distance),
+      waitingTime: roundUpWaitingTime(ride.waitingTime),
+    }
+
     result +=
       `	Ride Fare: ฿${minimumFare(fare).toFixed(
         2
