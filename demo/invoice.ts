@@ -41,11 +41,11 @@ function generateInvoice(rides: Ride[] = []): string {
         info.waitingTime
       } minutes` + '\n'
   }
-  const _totalFare = details.reduce((acc, cur) => acc + cur.fare, 0)
-  const averageFarePerRide = _totalFare / rides.length
+  const totalFare = details.reduce((acc, cur) => acc + cur.fare, 0)
+  const averageFarePerRide = totalFare / rides.length
 
   result += 'Total Number of Rides: ' + rides.length + '\n'
-  result += 'Total Fare: ฿' + _totalFare.toFixed(2) + '\n'
+  result += 'Total Fare: ฿' + totalFare.toFixed(2) + '\n'
   result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
   return result
 }
