@@ -4,9 +4,9 @@ type Ride = {
 }
 
 function generateInvoice(rides: Ride[]): string {
-  let totalFare = 0,
-    totalRides = 0,
-    totalWaitingTime = 0
+  let totalFare = 0
+  let totalRides = 0
+  let totalWaitingTime = 0
   let result = ''
   result += 'Invoice:' + '\n'
   for (const ride of rides) {
