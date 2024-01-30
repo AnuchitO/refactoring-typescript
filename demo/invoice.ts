@@ -16,8 +16,6 @@ const minimumFare = (fare: number): number => {
 }
 
 const plainTextInvoice = (details: any[], rides: Ride[] = []): string => {
-  // presentation logic
-  // extract to function plainTextInvoice
   let result = ''
   result += 'Invoice:' + '\n'
   for (const info of details) {
@@ -38,7 +36,6 @@ const plainTextInvoice = (details: any[], rides: Ride[] = []): string => {
 }
 
 function generateInvoice(rides: Ride[] = []): string {
-  // business logic
   const details = rides.map((ride) => {
     const distance = roundUpDistance(ride.distance)
     const waitingTime = roundUpWaitingTime(ride.waitingTime)
