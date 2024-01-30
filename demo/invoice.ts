@@ -15,7 +15,13 @@ const minimumFare = (fare: number): number => {
   return fare < 35 ? 35 : fare
 }
 
-const plainTextInvoice = (details: any[]): string => {
+type Detail = {
+  fare: number
+  distance: number
+  waitingTime: number
+}
+
+const plainTextInvoice = (details: Detail[]): string => {
   let result = 'Invoice:' + '\n'
   const rideFare = details.map((info) => {
     return `	Ride Fare: ฿${info.fare.toFixed(
@@ -37,7 +43,7 @@ const plainTextInvoice = (details: any[]): string => {
 }
 
 function generateInvoice(rides: Ride[] = []): string {
-  const details = rides.map((ride) => {
+  const details: Detail[] = rides.map((ride) => {
     const distance = roundUpDistance(ride.distance)
     const waitingTime = roundUpWaitingTime(ride.waitingTime)
     const fare = 4 * distance + waitingTime
