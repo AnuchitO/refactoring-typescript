@@ -22,8 +22,6 @@ function generateInvoice(rides: Ride[] = []): string {
   for (const ride of rides) {
     const fare =
       4 * roundUpDistance(ride.distance) + roundUpWaitingTime(ride.waitingTime)
-    const minimumFare = _minimumFare(fare)
-
     totalFare += _minimumFare(fare)
 
     result +=
