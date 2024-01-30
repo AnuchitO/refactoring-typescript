@@ -15,7 +15,7 @@ const minimumFare = (fare: number): number => {
   return fare < 35 ? 35 : fare
 }
 
-const plainTextInvoice = (details: any[], rides: Ride[] = []): string => {
+const plainTextInvoice = (details: any[]): string => {
   let result = 'Invoice:' + '\n'
   const rideFare = details.map((info) => {
     return `	Ride Fare: ฿${info.fare.toFixed(
@@ -49,7 +49,7 @@ function generateInvoice(rides: Ride[] = []): string {
     }
   })
 
-  return plainTextInvoice(details, rides)
+  return plainTextInvoice(details)
 }
 
 export {generateInvoice, Ride}
