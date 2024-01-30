@@ -18,14 +18,16 @@ const minimumFare = (fare: number): number => {
 const plainTextInvoice = (details: any[], rides: Ride[] = []): string => {
   let result = ''
   result += 'Invoice:' + '\n'
-  for (const info of details) {
-    result +=
-      `	Ride Fare: ฿${info.fare.toFixed(
-        2
-      )} for Distance: ${info.distance.toFixed(1)} km, Waiting Time: ${
-        info.waitingTime
-      } minutes` + '\n'
-  }
+  const rideFare = details.map((info) => {
+    return `	Ride Fare: ฿${info.fare.toFixed(
+      2
+    )} for Distance: ${info.distance.toFixed(1)} km, Waiting Time: ${
+      info.waitingTime
+    } minutes`
+  })
+
+  result += rideFare.join('\n') + '\n'
+
   const totalFare = details.reduce((acc, cur) => acc + cur.fare, 0)
   const averageFarePerRide = totalFare / rides.length
 
