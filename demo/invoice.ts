@@ -31,12 +31,11 @@ function generateInvoice(rides: Ride[] = []): string {
     }
 
     result +=
-      `	Ride Fare: ฿${minimumFare(fare).toFixed(
+      `	Ride Fare: ฿${info.fare.toFixed(
         2
-      )} for Distance: ${roundUpDistance(ride.distance).toFixed(
-        1
-      )} km, Waiting Time: ${roundUpWaitingTime(ride.waitingTime)} minutes` +
-      '\n'
+      )} for Distance: ${info.distance.toFixed(1)} km, Waiting Time: ${
+        info.waitingTime
+      } minutes` + '\n'
   }
 
   const averageFarePerRide = totalFare / rides.length
