@@ -26,11 +26,11 @@ const plainTextInvoice = (details: any[], rides: Ride[] = []): string => {
   })
 
   result += rideFare.join('\n') + '\n'
-
+  const numberOfRides = details.length
   const totalFare = details.reduce((acc, cur) => acc + cur.fare, 0)
-  const averageFarePerRide = totalFare / rides.length
+  const averageFarePerRide = totalFare / numberOfRides
 
-  result += 'Total Number of Rides: ' + rides.length + '\n'
+  result += 'Total Number of Rides: ' + numberOfRides + '\n'
   result += 'Total Fare: ฿' + totalFare.toFixed(2) + '\n'
   result += 'Average Fare Per Ride: ฿' + averageFarePerRide.toFixed(2) + '\n'
   return result
