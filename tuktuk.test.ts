@@ -190,5 +190,14 @@ describe('demo Tuk Tuk', () => {
 
       expect(result).toEqual(35)
     })
+
+    it('should return cost of multiple rides that have two rides', () => {
+      const ride1 = {distance: 8, waitingTime: 2}
+      const ride2 = {distance: 10, waitingTime: 5}
+
+      const result = rides([ride1, ride2])
+
+      expect(result).toEqual(80)
+    })
   })
 })
