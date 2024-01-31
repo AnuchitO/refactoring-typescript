@@ -38,4 +38,21 @@ export const rides = (rs: Ride[]): number => {
   return rs.reduce((acc, r) => acc + ride(r), 0)
 }
 
+type Invoice = {
+  totalNumberOfRides: number
+  totalFare: number
+  averageFarePerRide: number
+}
+export const tuktukInvoice = (rs: Ride[]): Invoice => {
+  const totalNumberOfRides = rs.length
+  const totalFare = rides(rs)
+  const averageFarePerRide = totalFare / totalNumberOfRides
+
+  return {
+    totalNumberOfRides,
+    totalFare,
+    averageFarePerRide,
+  }
+}
+
 export default tuktuk

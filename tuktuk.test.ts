@@ -6,6 +6,7 @@ import tuktuk, {
   rides,
   roundDistance,
   roundWaitingTime,
+  tuktukInvoice,
 } from './tuktuk'
 
 describe('demo Tuk Tuk', () => {
@@ -198,6 +199,32 @@ describe('demo Tuk Tuk', () => {
       const result = rides([ride1, ride2])
 
       expect(result).toEqual(80)
+    })
+  })
+
+  describe('Detailed Invoice Data', () => {
+    it('should return detailed invoice of single ride', () => {
+      const ride1 = {distance: 8, waitingTime: 8}
+
+      const result = tuktukInvoice([ride1])
+
+      expect(result).toEqual({
+        totalNumberOfRides: 1,
+        totalFare: 40,
+        averageFarePerRide: 40,
+      })
+    })
+    it('should return detailed invoice of multiple rides', () => {
+      const ride1 = {distance: 8, waitingTime: 2}
+      const ride2 = {distance: 10, waitingTime: 5}
+
+      const result = tuktukInvoice([ride1, ride2])
+
+      expect(result).toEqual({
+        totalNumberOfRides: 2,
+        totalFare: 80,
+        averageFarePerRide: 40,
+      })
     })
   })
 })
