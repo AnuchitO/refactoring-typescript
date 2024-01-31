@@ -155,5 +155,11 @@ describe('demo Tuk Tuk', () => {
 
       expect(result).toEqual(35)
     })
+
+    it('should return minimum as ฿35 when ฿35', () => {
+      const result = adjustedMinimumFare(35)
+
+      expect(result).toEqual(35)
+    })
   })
 })
