@@ -110,5 +110,14 @@ describe('demo Tuk Tuk', () => {
 
       expect(result).toEqual(6)
     })
+
+    it('should return cost of 1.5km without waiting time', () => {
+      const distance = 1.5
+      const waitingTime = 0
+
+      const result = fare(distance, waitingTime)
+
+      expect(result).toEqual(6)
+    })
   })
 })
