@@ -22,7 +22,7 @@ export const fare = (distance: number, waitingTime: number): number => {
 }
 
 export const adjustedMinimumFare = (fare: number): number => {
-	return 35
+  return Math.max(fare, 35)
 }
 
 export default tuktuk
