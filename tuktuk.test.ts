@@ -18,4 +18,13 @@ describe('demo Tuk Tuk', () => {
 
     expect(result).toEqual(8)
   })
+
+	it('should return total of 0km with 1m waiting time', () => {
+		const distance = 0
+		const waitingTime = 1
+
+		const result = calculateFare(distance, waitingTime)
+
+		expect(result).toEqual(1)
+	})
 })
