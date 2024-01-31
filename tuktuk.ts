@@ -21,4 +21,8 @@ export const fare = (distance: number, waitingTime: number): number => {
   return calculateFare(roundDistance(distance), roundWaitingTime(waitingTime))
 }
 
+export const adjustedMinimumFare = (fare: number): number => {
+	return 35
+}
+
 export default tuktuk

@@ -1,4 +1,5 @@
 import tuktuk, {
+  adjustedMinimumFare,
   calculateFare,
   fare,
   roundDistance,
@@ -145,6 +146,14 @@ describe('demo Tuk Tuk', () => {
       const result = fare(distance, waitingTime)
 
       expect(result).toEqual(37)
+    })
+  })
+
+  describe('minimum fare of ride', () => {
+    it('should return minimum as ฿35 when fare is less than ฿35', () => {
+      const result = adjustedMinimumFare(34)
+
+      expect(result).toEqual(35)
     })
   })
 })
