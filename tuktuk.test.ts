@@ -1,4 +1,9 @@
-import tuktuk, {calculateFare, roundDistance, roundWaitingTime} from './tuktuk'
+import tuktuk, {
+  calculateFare,
+  fare,
+  roundDistance,
+  roundWaitingTime,
+} from './tuktuk'
 
 describe('demo Tuk Tuk', () => {
   it('should return total of 1km without waiting time', () => {
@@ -93,6 +98,17 @@ describe('demo Tuk Tuk', () => {
       const result = roundWaitingTime(waitingTime)
 
       expect(result).toEqual(2)
+    })
+  })
+
+  describe('fare of ride', () => {
+    it('should return cost of 1.3km without waiting time', () => {
+      const distance = 1.3
+      const waitingTime = 0
+
+      const result = fare(distance, waitingTime)
+
+      expect(result).toEqual(6)
     })
   })
 })
