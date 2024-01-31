@@ -9,4 +9,8 @@ export const calculateFare = (
   return 4 * distance + waitingTime
 }
 
+export const roundDistance = (distance: number): number => {
+  return 0.5
+}
+
 export default tuktuk
