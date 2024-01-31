@@ -10,7 +10,7 @@ export const calculateFare = (
 }
 
 export const roundDistance = (distance: number): number => {
-  return 0.5
+  return Math.ceil(distance * 2) / 2
 }
 
 export default tuktuk
