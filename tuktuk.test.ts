@@ -1,7 +1,12 @@
-import tuktuk from './tuktuk'
+import tuktuk, {calculateFare} from './tuktuk'
 
 describe('demo Tuk Tuk', () => {
-  test('tuktuk 1 + 2 to equal 3', () => {
-    expect(tuktuk(1, 2)).toBe(3)
+  it('should return total of 1km without waiting time', () => {
+    const distance = 1
+    const waitingTime = 0
+
+    const result = calculateFare(distance, waitingTime)
+
+    expect(result).toEqual(4)
   })
 })
