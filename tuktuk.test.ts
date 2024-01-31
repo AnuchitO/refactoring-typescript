@@ -2,6 +2,7 @@ import tuktuk, {
   adjustedMinimumFare,
   calculateFare,
   fare,
+  ride,
   roundDistance,
   roundWaitingTime,
 } from './tuktuk'
@@ -166,6 +167,17 @@ describe('demo Tuk Tuk', () => {
       const result = adjustedMinimumFare(36)
 
       expect(result).toEqual(36)
+    })
+  })
+
+  describe('Single Ride', () => {
+    it('should return cost of single ride', () => {
+      const distance = 8
+      const waitingTime = 8
+
+      const result = ride({distance, waitingTime})
+
+      expect(result).toEqual(40)
     })
   })
 })

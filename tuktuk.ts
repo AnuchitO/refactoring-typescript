@@ -25,4 +25,13 @@ export const adjustedMinimumFare = (fare: number): number => {
   return Math.max(fare, 35)
 }
 
+type Ride = {
+  distance: number
+  waitingTime: number
+}
+
+export const ride = (r: Ride): number => {
+  return adjustedMinimumFare(fare(r.distance, r.waitingTime))
+}
+
 export default tuktuk
