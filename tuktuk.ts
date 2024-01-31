@@ -18,7 +18,7 @@ export const roundWaitingTime = (waitingTime: number): number => {
 }
 
 export const fare = (distance: number, waitingTime: number): number => {
-  return calculateFare(roundDistance(distance), 0)
+  return calculateFare(roundDistance(distance), roundWaitingTime(waitingTime))
 }
 
 export default tuktuk
