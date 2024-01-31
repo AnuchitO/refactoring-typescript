@@ -6,7 +6,7 @@ export const calculateFare = (
   distance: number,
   waitingTime: number
 ): number => {
-  return 4
+  return 4 * distance
 }
 
 export default tuktuk
