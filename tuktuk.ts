@@ -34,4 +34,8 @@ export const ride = (r: Ride): number => {
   return adjustedMinimumFare(fare(r.distance, r.waitingTime))
 }
 
+export const rides = (rs: Ride[]): number => {
+  return rs.reduce((acc, r) => acc + ride(r), 0)
+}
+
 export default tuktuk

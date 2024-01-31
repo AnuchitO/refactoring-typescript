@@ -3,6 +3,7 @@ import tuktuk, {
   calculateFare,
   fare,
   ride,
+  rides,
   roundDistance,
   roundWaitingTime,
 } from './tuktuk'
@@ -178,6 +179,16 @@ describe('demo Tuk Tuk', () => {
       const result = ride({distance, waitingTime})
 
       expect(result).toEqual(40)
+    })
+  })
+
+  describe('Multiple Rides', () => {
+    it('should return cost of multiple rides that have only one ride', () => {
+      const ride1 = {distance: 8, waitingTime: 3}
+
+      const result = rides([ride1])
+
+      expect(result).toEqual(35)
     })
   })
 })
