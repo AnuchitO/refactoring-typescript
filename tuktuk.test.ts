@@ -36,5 +36,13 @@ describe('demo Tuk Tuk', () => {
 
       expect(result).toEqual(0.5)
     })
+
+    it('should round up distance to 0.5km', () => {
+      const distance = 0.5
+
+      const result = roundDistance(distance)
+
+      expect(result).toEqual(0.5)
+    })
   })
 })
