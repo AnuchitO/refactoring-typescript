@@ -78,5 +78,13 @@ describe('demo Tuk Tuk', () => {
 
       expect(result).toEqual(1)
     })
+
+    it('should round up waitingTime to 2m', () => {
+      const waitingTime = 1.2
+
+      const result = roundWaitingTime(waitingTime)
+
+      expect(result).toEqual(2)
+    })
   })
 })

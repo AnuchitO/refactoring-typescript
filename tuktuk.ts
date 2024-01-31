@@ -14,7 +14,7 @@ export const roundDistance = (distance: number): number => {
 }
 
 export const roundWaitingTime = (waitingTime: number): number => {
-  return 1
+  return Math.ceil(waitingTime)
 }
 
 export default tuktuk
